@@ -19,7 +19,9 @@ class SimpleTable extends Component {
     };
   }
   setPageSize(event, newpagesize) {
-    this.setState({ rowsPerPage: parseInt(newpagesize.key) });
+    this.state.rowsPerPage = parseInt(newpagesize.key);
+    // this.setState({ rowsPerPage: parseInt(newpagesize.key) });
+    console.log("Venant du tableau " + parseInt(newpagesize.key));
     console.log("Venant du tableau " + this.state.rowsPerPage);
     this.props.parrentCallbackPageSize(this.state.rowsPerPage);
   }

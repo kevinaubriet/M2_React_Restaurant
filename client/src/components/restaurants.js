@@ -17,13 +17,15 @@ class Restaurant extends React.Component {
   }
 
   callbackPageSize = pageSizeChild => {
-    this.setState({ pageSize: pageSizeChild });
+    this.state.pageSize = pageSizeChild;
+    // this.setState({ pageSize: pageSizeChild });
     console.log("Venant du menu " + this.state.pageSize);
     this.getRestaurants();
   };
 
   callbackIndexPage = indexPagechild => {
-    this.setState({ indexPage: indexPagechild });
+    this.state.indexPage = indexPagechild;
+    // this.setState({ indexPage: indexPagechild });
     console.log(this.state.indexPage);
     this.getRestaurants();
   };
