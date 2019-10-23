@@ -13,6 +13,10 @@ class Restaurant extends React.Component {
       pageSize: 10,
       indexPage: 0
     };
+    // this.getRestaurants();
+  }
+
+  componentDidMount() {
     this.getRestaurants();
   }
 
@@ -58,7 +62,22 @@ class Restaurant extends React.Component {
   };
 
   callbackDelrestaurant = delRestaurant => {
-    console.log(delRestaurant._id);
+    console.log("je vais supprimer un restaurant");
+
+    let url = "http://localhost:8080/api/restaurants/" + delRestaurant._id;
+
+    fetch(url, {
+      method: "DELETE"
+    })
+      .then(responseJSON => {
+        return responseJSON.json();
+      })
+      .then(responseJS => {
+        this.getRestaurants();
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   callbackModrestaurant = (oldRestaurant, newRestaurant) => {
