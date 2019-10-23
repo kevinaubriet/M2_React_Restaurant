@@ -106,16 +106,9 @@ class Restaurant extends React.Component {
       });
   };
 
-  callbackNextPage() {
-    this.setState({ indexPage: this.state.indexPage + 1 });
-    this.getRestaurants();
-  }
-  callbackPreviousPage() {
-    this.setState({ indexPage: this.state.indexPage - 1 });
-    this.getRestaurants();
-  }
   callbackSearch = searchChild => {
-    this.setState({ search: searchChild });
+    this.state.search = searchChild;
+    // this.setState({ search: searchChild });
     this.getRestaurants();
   };
 
