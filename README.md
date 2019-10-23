@@ -6,6 +6,7 @@ Terminal1: lancer mongod
 Terminal2: lancer le serveur 
   - "npm install" dans le dossier serveur
   - "node serverCrudWithMongo.js"
+
 Lancer client : 
   - "npm install" à la racine du dossier client
   - "npm start" à la racine du dossier client
